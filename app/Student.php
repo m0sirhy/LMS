@@ -18,4 +18,9 @@ class Student extends Model
         return $this->belongsTo('App\Group');
     }
 
+    public function dailyfollowup()
+    {
+        return $this->belongsTo('App\DailyFollowUp');
+    }
+
 }

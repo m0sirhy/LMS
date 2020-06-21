@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/index',function () {
+    return view('instructor.index');
+});
+Route::get('/std',function () {
+    return view('instructor.rivews');
+});

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInstructorsTable extends Migration
+class CreateDailyFollowUpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,12 @@ class CreateInstructorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('instructors', function (Blueprint $table) {
-            $table->id();
+        Schema::create('daily_follow_ups', function (Blueprint $table) {
+            $table->id();          
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('group_id');
-            $table->text('first_name');
-            $table->text('mid_name');
-            $table->text('last_name');
-            $table->date('date_of_birth');
-            $table->text('image_path');
+            $table->unsignedBigInteger('ayah_id');
+            $table->boolean('status');
             $table->foreign('user_id')->references('id')->on('users');
-           $table->foreign('group_id')->references('id')->on('groups');
-
             $table->timestamps();
         });
     }
@@ -36,6 +30,6 @@ class CreateInstructorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instructors');
+        Schema::dropIfExists('daily_follow_ups');
     }
 }

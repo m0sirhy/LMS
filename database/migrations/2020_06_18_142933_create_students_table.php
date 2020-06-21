@@ -22,7 +22,8 @@ class CreateStudentsTable extends Migration
             $table->text('last_name');
             $table->date('date_of_birth');
             $table->text('image_path');
-        
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('group_id')->references('id')->on('groups');
             $table->timestamps();
 
 
