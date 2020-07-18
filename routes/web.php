@@ -18,8 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/index',function () {
+    return view('landing.index');
+});
+Route::get('/ins',function () {
     return view('instructor.index');
 });
-Route::get('/std',function () {
-    return view('instructor.rivews');
-});
+
+Route::resource('course', 'CourseController');
+
+Route::resource('student', 'StudentController');
+Route::resource('semesters', 'StudentController');
+
